@@ -15,6 +15,14 @@ This is a sparse collection of facts taken from Dummit and Foote, 3e. The
 goal is to recap the most important things Prof. Vojta has covered, with an
 emphasis on non-obvious results.
 
+\section*{Confusing topics}
+
+\begin{enumerate}[1.]
+    \item 4.1 (Cycle Decompositions): The proof is hard to follow, and some
+        statements (e.g `Since $G$ is a cyclic group, $G_x \trianglelefteq
+        G$') are non-intuitive.
+\end{enumerate}
+
 \section*{Chapter 0/1}
 
 \begin{enumerate}[1.]
@@ -26,7 +34,7 @@ emphasis on non-obvious results.
     \item Fields ($F$, $F^{\times} = F - \{0\}$): $(F, +)$ and $(F^{\times},
         \times)$ are abelian groups. Note: if $|F| < \infty$, $\exists p,m$
         s.t $|F| = p^m$.
-    \item Symmetry groups: $|S^n| = n!$. Disjoint cycles commute, but $S_{n
+    \item Symmetries: $|S_n| = n!$. Disjoint cycles commute, but $S_{n
         \geq 3}$ is non-abelian.
     \item Group actions on $A$ by $G$: (i) $g_1(g_2a) = (g_1g_2)a$, (ii) $1a
         = a$. $\forall g_1,g_2,a$.
@@ -47,7 +55,7 @@ emphasis on non-obvious results.
     \item Normalizer: $\leq G$ s.t $gAg^{-1} = A$ $\forall g$.
     \item Stabilizer: fixing $a \in A$, $\leq G$ s.t $ga = a$. Kernel: 
         $\forall a \in A$, $\leq G$ s.t $ga = a$.
-    \item If $x^m = 1$ and $x^n = 1$, $x^{(m, n)} = 1$.    
+    \item If $x^m = 1$ and $x^n = 1$, $x^{(m, n)} = 1$ (in cyclic groups).
     \item Let $x \in G$, $a \not= 0$: if $|x| = \infty$ then $|x^a| =
         \infty$. Else, if $|x| = n$, then $|x^a| = n/(n, a)$ ($\star$).
     \item Every subgroup of a cyclic group is cyclic, and cyclic groups of
@@ -71,6 +79,7 @@ emphasis on non-obvious results.
         the operation $uN \cdot vN = (uv)N$ is only well defined if $N
         \trianglelefteq G$ (or equivalently $N_G(N) = G$, $gN = Ng$ $\forall
         g$, or $gNg^{-1} \subseteq N$ $\forall g$).
+        \footnote{A useful theorem for later: $gH = H$ iff $g \in H$.}
     \item If $|G| < \infty$ and $H \leq G$, then $|H| \mid |G|$ and 
         $|G : H| = |G|/|H|$ ($\star$).
     \item If $|G| < \infty$ and $p \mid |G|$, $\exists x \in G$ s.t $|x| =
@@ -87,8 +96,72 @@ emphasis on non-obvious results.
         A/(A \cap B)$.
     \item Let $H \leq K$ and $H,K \trianglelefteq G$: then $K/H
         \trianglelefteq G/H$ so $(G/H)/(K/H) \cong G/K$.
-    \item Let $\pi : G \rightarrow G/N$ be the natural projection $g \mapsto
-        gN$, and (stopped at page 100)
+    \item To show that a homomorphism from $\varphi : G/N \rightarrow H$ is
+        well-defined, one must prove $N \leq \ker \Phi$ (with $\Phi : G
+        \rightarrow H$).
+    \item $(a_1 a_2 ... a_m) = (a_1 a_m)(a_1 a_{m-1})...(a_1 a_2)$. 
+        The sign of a permutation (i.e the parity of the number of
+        2-cycles $\epsilon(\sigma) \in \{\pm 1\}$
+        \footnote{An $m$-cycle is composed of $m-1$ transpositions, 
+            immediately giving $\epsilon(\sigma) = Parity(m-1)$.}
+        ) is representation-independent.
+    \item $\epsilon : S_n \rightarrow \{\pm 1\}$ is a surjective
+        homomorphism. $\ker \epsilon = A_n$, the group of even permutations.
+        Note $S_n/A_n \cong \epsilon(S_n) = \{\pm 1\}$ and $|A_n| =
+        \frac{n!}{2}$.
+\end{enumerate}
+
+\section*{Chapter 4}
+
+\begin{enumerate}[1.]
+    \item $\sigma_g : A \rightarrow A$ ($a \mapsto ga$), and
+        $\varphi : G \rightarrow S_A$ ($g \mapsto \sigma_g$). 
+        Note: the kernel of the action $\cap_{a \in A} G_a = \ker \varphi$.
+        \footnote{`Faithful' actions have kernels equal to $\{1_G\}$}.
+    \item For $A \not= \phi$, the actions of $G$ on $A$ and the
+        homomorphisms $G \rightarrow S_A$ are bijective. Let $a \sim b$ iff $a
+        = gb$ for some $g \in G$: then $\sim$ partitions $G$, and the order
+        of the equivalence class (i.e orbit) containing $a$ is $|G : G_a|$.
+        \footnote{`Transitive' actions induce only one orbit in $A$.}
+    \item Elements in $G$ effect the same permutation on $A$ iff they're in
+        the same coset of the kernel of the action.
+    \item Let $H \leq G$, $A$ be the set of left cosets of $H$ in $G$, and
+        $G$ act on $A$ (with $\pi_H : G \rightarrow S_A$). Then the action
+        is transitive, $G_{1H} = H$, and $\ker \pi_H = \cap_{x \in G}
+        xHx^{-1}$ (giving the largest normal subgroup of $G$ in $H$).
+    \item If $|G| = n$, $G \cong H$ for some $H \leq S_n$. If $p$ is the
+        smallest prime s.t $p | n$, then any subgroup $H \leq G$ s.t $|G :
+        H| = p$ is normal.
+\end{enumerate}
+
+\section*{Chapter 5}
+
+\begin{enumerate}[1.]
+    \item Given a direct product $G_1 \times G_2 \times ... \times G_n$,
+        $G_i \cong \{(1, ..., g_i, ..., 1) \mid g_i \in G_i\}$.
+        \footnote{The projection $\pi : G \rightarrow G_i$ is $g \mapsto
+        g[i]$.}
+    \item Let $G = \langle A \rangle$ ($A \subseteq G$, finite). Then $G \cong
+        \mathbb{Z}^r \times Z_{n_1} \times Z_{n_2} \times ... \times
+        Z_{n_s}$ s.t $r \geq 0$, $n_j \geq 2$ $\forall j$, and $n_{i+1} |
+        n_i$ for $1 \leq i < s$ uniquely (up to isomorphism).
+    \item Let $n = \Pi n_i$: if $p | n$ then $p | n_1$. If $n$ is a product
+        of distinct primes, then $Z_n$ is the only abelian group of order
+        $n$ (up to isomorphism).
+    \item Let $n = p_1^{\alpha_1}...p_k^{\alpha_k}$. Then $G \cong A_1
+        \times ... \times A_k$ where $|A_i| = p_i^{\alpha_i}$. Each $A_i
+        \cong Z_{p_i^{\beta_1}} \times ... \times Z_{p_i^{\beta_t}}$ where
+        $\beta_i \geq \beta_{i+1}$ and $\sum_i^t \beta_i = \alpha_i$.
+    \item $Z_m \times Z_n \cong Z_{mn}$ iff $(m, n) = 1$, so $Z_n \cong
+        Z_{p_1^{\alpha_1}} \times ... \times Z_{p_k^{\alpha_k}}$.
+    \item The group exponent is the smallest positive integer s.t $x^n = 1$
+        $\forall x \in G$.
+\end{enumerate}
+
+\section*{Chapter 6}
+
+\begin{enumerate}[1.]
+    \item 
 \end{enumerate}
 
 \end{document}
