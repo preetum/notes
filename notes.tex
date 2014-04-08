@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{amssymb}
+
+\title{Math H113 - Spring 2014 Notes}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+
+This is a sparse collection of facts taken from Dummit and Foote, 3e. The
+goal is to recap the most important things Prof. Vojta has covered, with an
+emphasis on non-obvious results.
+
+\section*{Chapter 0/1}
+
+\begin{enumerate}[1.]
+    \item gcd: $(m, n) = am + bn$. 
+    \item The Euler function: $\varphi(p^a) = p^{a-1}(p - 1)$, $\varphi(ab)
+        = \varphi(a)\varphi(b)$ if $(a, b) = 1$.
+    \item The dihedral group: $D_{2n} = \langle r, s \mid r^n = s^2 = 1, rs
+        = sr^{-1} \rangle$.
+    \item Fields ($F$, $F^{\times} = F - \{0\}$): $(F, +)$ and $(F^{\times},
+        \times)$ are abelian groups. Note: if $|F| < \infty$, $\exists p,m$
+        s.t $|F| = p^m$.
+    \item Symmetry groups: $|S^n| = n!$. Disjoint cycles commute, but $S_{n
+        \geq 3}$ is non-abelian.
+    \item Group actions on $A$ by $G$: (i) $g_1(g_2a) = (g_1g_2)a$, (ii) $1a
+        = a$. $\forall g_1,g_2,a$.
+        \begin{enumerate}[(a)]
+            \item Fixing $g \in G$ in the action gives $\sigma_g \in S_A$.
+            \item $g \mapsto \sigma_g$ is a homomorphism ($G \rightarrow
+                S_A$, the permutation representation).
+        \end{enumerate}
+\end{enumerate}
+
+\section*{Chapter 2}
+
+\begin{enumerate}[1.]
+    \item Subgroup criterion: $H \not= \phi$ and $xy^{-1} \in H$ $\forall x,y
+        \in H$.
+    \item Centralizer: $\leq G$, commutes with $A$. Center: $\leq G$,
+        commutes with $G$ itself. 
+    \item Normalizer: $\leq G$ s.t $gAg^{-1} = A$ $\forall g$.
+    \item Stabilizer: fixing $a \in A$, $\leq G$ s.t $ga = a$. Kernel: 
+        $\forall a \in A$, $\leq G$ s.t $ga = a$.
+    \item If $x^m = 1$ and $x^n = 1$, $x^{(m, n)} = 1$.    
+    \item Let $x \in G$, $a \not= 0$: if $|x| = \infty$ then $|x^a| =
+        \infty$. Else, if $|x| = n$, then $|x^a| = n/(n, a)$ ($\star$).
+    \item Every subgroup of a cyclic group is cyclic, and cyclic groups of
+        the same order are isomorphic to each other.
+    \item Let $|x| = n$, $H = \langle x \rangle$. Only if $(n, a) = 1$, $H =
+        \langle x^a \rangle$ (count these with $\varphi(n)$). 
+        A general statement: $\langle x^m \rangle = \langle x^{(n, m)}
+        \rangle$.
+    \item Let $A \not= \phi$ be a set of subgroups of $G$. Then their
+        intersection $\langle A \rangle = \cap A \leq G$.
+\end{enumerate}
+
+\section*{Chapter 3}
+
+\begin{enumerate}[1.]
+    \item Given $\varphi : G \rightarrow H$; $\varphi(1_G) = 1_H$, 
+        $\ker \varphi \leq G$, and im($\varphi$) $\varphi \leq H$.
+    \item $G/K$ is basically arithmetic on the fibers of $\varphi$, which
+        are all cosets of $\ker \varphi$.
+    \item The set of left cosets of any $N \leq G$ partitions $G$. However,
+        the operation $uN \cdot vN = (uv)N$ is only well defined if $N
+        \trianglelefteq G$ (or equivalently $N_G(N) = G$, $gN = Ng$ $\forall
+        g$, or $gNg^{-1} \subseteq N$ $\forall g$).
+    \item If $|G| < \infty$ and $H \leq G$, then $|H| \mid |G|$ and 
+        $|G : H| = |G|/|H|$ ($\star$).
+    \item If $|G| < \infty$ and $p \mid |G|$, $\exists x \in G$ s.t $|x| =
+        p$.
+    \item If $|G| = p^{\alpha}m$ ($p \not| m$), $\exists H \leq G$ s.t $|H|
+        = p^{\alpha}$.
+    \item $\ker \varphi \trianglelefteq G$, $G/\ker \varphi \cong
+        \varphi(G)$, $\varphi$ is 1-1 iff $\ker \varphi = 1$, and 
+        $|G : \ker \varphi| = |\varphi(G)|$.
+    \item If finite $H, K \leq G$, then $|HK| = \frac{|H||K|}{|H \cap K|}$. 
+        $HK \leq G$ only if $KH \leq G$.
+    \item Let $A,B \leq G$ and $A \leq N_G(B)$. Then $AB \leq G$, $B
+        \trianglelefteq AB$, $A \cap B \trianglelefteq A$, and $AB/B \cong
+        A/(A \cap B)$.
+    \item Let $H \leq K$ and $H,K \trianglelefteq G$: then $K/H
+        \trianglelefteq G/H$ so $(G/H)/(K/H) \cong G/K$.
+    \item Let $\pi : G \rightarrow G/N$ be the natural projection $g \mapsto
+        gN$, and (stopped at page 100)
+\end{enumerate}
+
+\end{document}
