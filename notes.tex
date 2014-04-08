@@ -117,7 +117,7 @@ emphasis on non-obvious results.
     \item $\sigma_g : A \rightarrow A$ ($a \mapsto ga$), and
         $\varphi : G \rightarrow S_A$ ($g \mapsto \sigma_g$). 
         Note: the kernel of the action $\cap_{a \in A} G_a = \ker \varphi$.
-        \footnote{`Faithful' actions have kernels equal to $\{1_G\}$}.
+        \footnote{`Faithful' actions have kernels equal to $\{1_G\}$}
     \item For $A \not= \phi$, the actions of $G$ on $A$ and the
         homomorphisms $G \rightarrow S_A$ are bijective. Let $a \sim b$ iff $a
         = gb$ for some $g \in G$: then $\sim$ partitions $G$, and the order
@@ -161,7 +161,20 @@ emphasis on non-obvious results.
 \section*{Chapter 6}
 
 \begin{enumerate}[1.]
-    \item 
+    \item Let $F(S)$ be the group of words formed from $S$.
+        Given a map $\psi : S \rightarrow G$, there exists a unique
+        homomorphism $\Phi : F(S) \rightarrow G$ s.t $\Phi|_S = \psi$.
+    \item Because $\Phi$ is a homomorphism, $\Phi(s_i^{\epsilon_i} ...) =
+        \psi(s_i)^{\epsilon_i} ...$.
+    \item Empty word: $(1, 1, ...)$. Reduced word: $s_{i+1} \not= s_i^{-1}$
+        and $s_i = 1 \Rightarrow s_{k \geq i} = 1$.
+    \item Subgroups of free groups are also free groups.
+    \item Let $S \subseteq G$ s.t $G = \langle S \rangle$. A presentation of
+        $G$ is some $(S, R)$ s.t $\ker \Phi$ is the smallest normal subgroup
+        containing $\langle R \rangle$. $G$ is finitely generated if $S$ is
+        finite, and finitely presented if $R$ is also finite.
 \end{enumerate}
+
+\section*{Chapter 7}
 
 \end{document}
