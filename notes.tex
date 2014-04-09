@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{enumerate}
 \usepackage{amssymb}
+\newcommand{\normin}{\trianglelefteq}
 
 \title{Math H113 - Spring 2014 Notes}
 
@@ -26,7 +27,7 @@ emphasis on non-obvious results.
 \section*{Chapter 0/1}
 
 \begin{enumerate}[1.]
-    \item gcd: $(m, n) = am + bn$. 
+    \item gcd: $(m, n) = am + bn$.
     \item The Euler function: $\varphi(p^a) = p^{a-1}(p - 1)$, $\varphi(ab)
         = \varphi(a)\varphi(b)$ if $(a, b) = 1$.
     \item The dihedral group: $D_{2n} = \langle r, s \mid r^n = s^2 = 1, rs
@@ -51,9 +52,9 @@ emphasis on non-obvious results.
     \item Subgroup criterion: $H \not= \phi$ and $xy^{-1} \in H$ $\forall x,y
         \in H$.
     \item Centralizer: $\leq G$, commutes with $A$. Center: $\leq G$,
-        commutes with $G$ itself. 
+        commutes with $G$ itself.
     \item Normalizer: $\leq G$ s.t $gAg^{-1} = A$ $\forall g$.
-    \item Stabilizer: fixing $a \in A$, $\leq G$ s.t $ga = a$. Kernel: 
+    \item Stabilizer: fixing $a \in A$, $\leq G$ s.t $ga = a$. Kernel:
         $\forall a \in A$, $\leq G$ s.t $ga = a$.
     \item If $x^m = 1$ and $x^n = 1$, $x^{(m, n)} = 1$ (in cyclic groups).
     \item Let $x \in G$, $a \not= 0$: if $|x| = \infty$ then $|x^a| =
@@ -61,7 +62,7 @@ emphasis on non-obvious results.
     \item Every subgroup of a cyclic group is cyclic, and cyclic groups of
         the same order are isomorphic to each other.
     \item Let $|x| = n$, $H = \langle x \rangle$. Only if $(n, a) = 1$, $H =
-        \langle x^a \rangle$ (count these with $\varphi(n)$). 
+        \langle x^a \rangle$ (count these with $\varphi(n)$).
         A general statement: $\langle x^m \rangle = \langle x^{(n, m)}
         \rangle$.
     \item Let $A \not= \phi$ be a set of subgroups of $G$. Then their
@@ -71,7 +72,7 @@ emphasis on non-obvious results.
 \section*{Chapter 3}
 
 \begin{enumerate}[1.]
-    \item Given $\varphi : G \rightarrow H$; $\varphi(1_G) = 1_H$, 
+    \item Given $\varphi : G \rightarrow H$; $\varphi(1_G) = 1_H$,
         $\ker \varphi \leq G$, and im($\varphi$) $\varphi \leq H$.
     \item $G/K$ is basically arithmetic on the fibers of $\varphi$, which
         are all cosets of $\ker \varphi$.
@@ -80,42 +81,50 @@ emphasis on non-obvious results.
         \trianglelefteq G$ (or equivalently $N_G(N) = G$, $gN = Ng$ $\forall
         g$, or $gNg^{-1} \subseteq N$ $\forall g$).
         \footnote{A useful theorem for later: $gH = H$ iff $g \in H$.}
-    \item If $|G| < \infty$ and $H \leq G$, then $|H| \mid |G|$ and 
+    \item If $|G| < \infty$ and $H \leq G$, then $|H| \mid |G|$ and
         $|G : H| = |G|/|H|$ ($\star$).
     \item If $|G| < \infty$ and $p \mid |G|$, $\exists x \in G$ s.t $|x| =
         p$.
     \item If $|G| = p^{\alpha}m$ ($p \not| m$), $\exists H \leq G$ s.t $|H|
         = p^{\alpha}$.
     \item $\ker \varphi \trianglelefteq G$, $G/\ker \varphi \cong
-        \varphi(G)$, $\varphi$ is 1-1 iff $\ker \varphi = 1$, and 
+        \varphi(G)$, $\varphi$ is 1-1 iff $\ker \varphi = 1$, and
         $|G : \ker \varphi| = |\varphi(G)|$.
-    \item If finite $H, K \leq G$, then $|HK| = \frac{|H||K|}{|H \cap K|}$. 
+    \item If finite $H, K \leq G$, then $|HK| = \frac{|H||K|}{|H \cap K|}$.
         $HK \leq G$ only if $KH \leq G$.
     \item Let $A,B \leq G$ and $A \leq N_G(B)$. Then $AB \leq G$, $B
         \trianglelefteq AB$, $A \cap B \trianglelefteq A$, and $AB/B \cong
         A/(A \cap B)$.
     \item Let $H \leq K$ and $H,K \trianglelefteq G$: then $K/H
         \trianglelefteq G/H$ so $(G/H)/(K/H) \cong G/K$.
+    \item For $N \trianglelefteq G$, there is a bijection between subgroups of
+    $G$ containing $N$ and subgroups of $G/N$
     \item To show that a homomorphism from $\varphi : G/N \rightarrow H$ is
         well-defined, one must prove $N \leq \ker \Phi$ (with $\Phi : G
         \rightarrow H$).
-    \item $(a_1 a_2 ... a_m) = (a_1 a_m)(a_1 a_{m-1})...(a_1 a_2)$. 
+    \item $(a_1 a_2 ... a_m) = (a_1 a_m)(a_1 a_{m-1})...(a_1 a_2)$.
         The sign of a permutation (i.e the parity of the number of
         2-cycles $\epsilon(\sigma) \in \{\pm 1\}$
-        \footnote{An $m$-cycle is composed of $m-1$ transpositions, 
+        \footnote{An $m$-cycle is composed of $m-1$ transpositions,
             immediately giving $\epsilon(\sigma) = Parity(m-1)$.}
         ) is representation-independent.
     \item $\epsilon : S_n \rightarrow \{\pm 1\}$ is a surjective
         homomorphism. $\ker \epsilon = A_n$, the group of even permutations.
         Note $S_n/A_n \cong \epsilon(S_n) = \{\pm 1\}$ and $|A_n| =
         \frac{n!}{2}$.
+    \item For $H \trianglelefteq G$ and $|G : H| = p$ prime, then for all $K
+    \leq G$, either $K \leq H$ or ($G = HK$ and $|K:K \cap H| = p$)
+    \item The commutator subgroup $N = <x^{-1}y^{-1}xy | x, y \in G>$ is normal,
+    and $G/N$ is always abelian.
+    \item ``Normal in" relation NOT transitive: $A \normin B \wedge B \normin C
+    \not\implies A \normin C$
 \end{enumerate}
 
 \section*{Chapter 4}
 
 \begin{enumerate}[1.]
     \item $\sigma_g : A \rightarrow A$ ($a \mapsto ga$), and
-        $\varphi : G \rightarrow S_A$ ($g \mapsto \sigma_g$). 
+        $\varphi : G \rightarrow S_A$ ($g \mapsto \sigma_g$).
         Note: the kernel of the action $\cap_{a \in A} G_a = \ker \varphi$.
         \footnote{`Faithful' actions have kernels equal to $\{1_G\}$}
     \item For $A \not= \phi$, the actions of $G$ on $A$ and the
@@ -173,6 +182,7 @@ emphasis on non-obvious results.
         $G$ is some $(S, R)$ s.t $\ker \Phi$ is the smallest normal subgroup
         containing $\langle R \rangle$. $G$ is finitely generated if $S$ is
         finite, and finitely presented if $R$ is also finite.
+    \item Any free abelian group of rank $n$ is $\cong \mathbb{Z}^n$
 \end{enumerate}
 
 \section*{Chapter 7}
@@ -182,17 +192,17 @@ emphasis on non-obvious results.
         If $\times$ commutes, so does $R$. If $1 \in R$, $1r = r1$ $\forall
         r$. If $1 \not= 0$ and every nonzero element has an inverse, $R$ is
         a division ring. Commutative division rings are fields.
-    \item Let $a,b \in R$ be nonzero. Then $a0 = 0a = 0$. Zero divisors: 
+    \item Let $a,b \in R$ be nonzero. Then $a0 = 0a = 0$. Zero divisors:
         $ab = 0$ or $ba = 0$. The set of units (i.e $uv = vu = 1$) is
         $R^{\times}$.
     \item Integral domains are commutative rings (with $1 \not= 0$)
         with no zero divisors. Zero divisors cannot be units, therefore
-        fields have no zero divisors. 
+        fields have no zero divisors.
     \item Finite integral domains are fields. Subrings are $\leq R$ and
         closed under $\times$.
     \item $R[x]$: $(ab)x^k = \sum_{i=0}^k a_ib_{k-i} =
         \sum_{i=0}^k a_{k-i}b_i$. Note: $R \subset R[x]$ (as the constant
-        polynomials) and $R[x]$ is commutative by definition.
+        polynomials) and $R[x]$ is commutative iff $R$ is.
     \item If $R$ is an integral domain, $\deg(ab) = \deg(a) + \deg(b)$,
         $R[x]^{\times} = R^{\times}$, and $R[x]$ is an integral domain.
     \item Square matrices: $(a_{ij}) \in M_n(R)$. Invertible: $GL_n(R)$.
@@ -205,7 +215,7 @@ emphasis on non-obvious results.
         $\ker \varphi = \{r \in R \mid \varphi(r) = 0_S\}$, as if $\varphi$
         were a group homomorphism.
     \item $I = \ker \varphi$ is a subring of $R$ (and an ideal/normal subgroup
-        thereof), im($\varphi$) is a subring of $S$. 
+        thereof), im($\varphi$) is a subring of $S$.
         If $\alpha \in \ker \varphi$, then $r\alpha$, $\alpha r \in R$
         $\forall r \in R$.
     \item Ideals: if $rI \subseteq I$, $Ir \subseteq I$, and $I$ subring of
@@ -218,6 +228,8 @@ emphasis on non-obvious results.
         A/(A \cap B)$.
     \item Let $I \subseteq J$ be ideals of $R$, then $(R/I)/(J/I) \cong
         R/J$.
+    \item For ideals $I$ of $R$, there is a bijection between subrings of
+    $R$ containing $I$ and subrings of $R/I$
     \item Ideal math: $I+J = \{i+j \mid i \in I, j \in J\}$, $IJ$ is the set
         of all finite sums of elements of the form $ij$, and $I^n$ are all
         $n$-length products within $I$.

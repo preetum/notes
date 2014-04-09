@@ -67,18 +67,20 @@ classoption: twocolumn
 * division ring: with $1 \neq 0$, every non-zero element is a unit
 * field: commutative division ring
 * zero-divisor (cannot be a unit)
-* integral domain: comm ring, $1 \neq 0$, no zero-divisors
+* integral domain: commutative ring, $1 \neq 0$, no zero-divisors
 * subring
 
 ## Types of Rings
 * Real Hamiltonian Quaternions
-* Polynomial ring: comm, with $1$
 * matrix ring
-* group ring: comm, with $1 \neq 0$
+* Polynomial ring $R[x]$: commutative, with $1$
+* group ring $RG$: commutative, with $1 \neq 0$
+    - $R\mathbb{N} \cong R[x]$
 
 ## Ring Homo, Ideals
 * ring homomorphism, quotient ring
 * [left/right] ideal
+* product of ideals
 * Ring Isomorphism Theorems
 
 
