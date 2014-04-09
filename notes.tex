@@ -73,11 +73,14 @@ emphasis on non-obvious results.
         \trianglelefteq G$ (or equivalently $N_G(N) = G$, $gN = Ng$ $\forall
         g$, or $gNg^{-1} \subseteq N$ $\forall g$).
         \footnote{A useful theorem for later: $gH = H$ iff $g \in H$.}
-    \item If $|G| < \infty$ and $H \leq G$, then $|H| \mid |G|$ and
-        $|G : H| = |G|/|H|$ ($\star$).
-    \item If $|G| < \infty$ and $p \mid |G|$, $\exists x \in G$ s.t $|x| =
+    \item {\bf Lagrange's Theorem:} \\
+        If $|G| < \infty$ and $H \leq G$, then $|H| \mid |G|$ and
+        $|G : H| = |G|/|H|$
+    \item {\bf Cauchy's Theorem:} \\
+        If $|G| < \infty$ and prime $p \mid |G|$, $\exists x \in G$ s.t $|x| =
         p$.
-    \item If $|G| = p^{\alpha}m$ ($p \not| m$), $\exists H \leq G$ s.t $|H|
+    \item {\bf Sylow's Theorem:} \\
+        If $|G| = p^{\alpha}m$ ($p \not| m$), $\exists H \leq G$ s.t $|H|
         = p^{\alpha}$.
     \item $\ker \varphi \trianglelefteq G$, $G/\ker \varphi \cong
         \varphi(G)$, $\varphi$ is 1-1 iff $\ker \varphi = 1$, and
@@ -104,6 +107,8 @@ emphasis on non-obvious results.
         homomorphism. $\ker \epsilon = A_n$, the group of even permutations.
         Note $S_n/A_n \cong \epsilon(S_n) = \{\pm 1\}$ and $|A_n| =
         \frac{n!}{2}$.
+    \item If $G = MN$ with $M, N \normin G$ then: $G/(M \cap N) \cong (G/M) \times
+    (G/N)$
     \item For $H \trianglelefteq G$ and $|G : H| = p$ prime, then for all $K
     \leq G$, either $K \leq H$ or ($G = HK$ and $|K:K \cap H| = p$)
     \item The commutator subgroup $N = <x^{-1}y^{-1}xy | x, y \in G>$ is normal,
@@ -140,20 +145,25 @@ emphasis on non-obvious results.
 
 \begin{enumerate}[1.]
     \item Given a direct product $G_1 \times G_2 \times ... \times G_n$,
-        $G_i \cong \{(1, ..., g_i, ..., 1) \mid g_i \in G_i\}$.
+        $G_i \cong <(1, ..., g_i, ..., 1) \mid g_i \in G_i>$
         \footnote{The projection $\pi : G \rightarrow G_i$ is $g \mapsto
         g[i]$.}
-    \item Let $G = \langle A \rangle$ ($A \subseteq G$, finite). Then $G \cong
+    \item {\bf Invariant Factor Decomposition:}
+        Let $G = \langle A \rangle$ ($A \subseteq G$, finite). Then $G \cong
         \mathbb{Z}^r \times Z_{n_1} \times Z_{n_2} \times ... \times
         Z_{n_s}$ s.t $r \geq 0$, $n_j \geq 2$ $\forall j$, and $n_{i+1} |
         n_i$ for $1 \leq i < s$ uniquely (up to isomorphism).
-    \item Let $n = \Pi n_i$: if $p | n$ then $p | n_1$. If $n$ is a product
-        of distinct primes, then $Z_n$ is the only abelian group of order
-        $n$ (up to isomorphism).
-    \item Let $n = p_1^{\alpha_1}...p_k^{\alpha_k}$. Then $G \cong A_1
+    \item {\bf Elementary Divisor Decomposition:}
+        Let $n = p_1^{\alpha_1}...p_k^{\alpha_k}$. Then $G \cong A_1
         \times ... \times A_k$ where $|A_i| = p_i^{\alpha_i}$. Each $A_i
         \cong Z_{p_i^{\beta_1}} \times ... \times Z_{p_i^{\beta_t}}$ where
         $\beta_i \geq \beta_{i+1}$ and $\sum_i^t \beta_i = \alpha_i$.
+    \item Let $n = \Pi n_i$: if $p | n$ then $p | n_1$. If $n$ is a product
+        of distinct primes, then $Z_n$ is the only abelian group of order
+        $n$ (up to isomorphism).
+    \item Full converse to Lagrange's Theorem: For any abelian group $G$ of
+    order $n$, there exists a subgroup of order $k$ for all $k | n$ (proof using
+    decomposition theorems).
     \item $Z_m \times Z_n \cong Z_{mn}$ iff $(m, n) = 1$, so $Z_n \cong
         Z_{p_1^{\alpha_1}} \times ... \times Z_{p_k^{\alpha_k}}$.
     \item The group exponent is the smallest positive integer s.t $x^n = 1$
