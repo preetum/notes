@@ -15,14 +15,6 @@ This is a sparse collection of facts taken from Dummit and Foote, 3e. The
 goal is to recap the most important things Prof. Vojta has covered, with an
 emphasis on non-obvious results.
 
-\section*{Confusing topics}
-
-\begin{enumerate}[1.]
-    \item 4.1 (Cycle Decompositions): The proof is hard to follow, and some
-        statements (e.g `Since $G$ is a cyclic group, $G_x \trianglelefteq
-        G$') are non-intuitive.
-\end{enumerate}
-
 \section*{Chapter 0/1}
 
 \begin{enumerate}[1.]
@@ -118,8 +110,8 @@ emphasis on non-obvious results.
         $\varphi : G \rightarrow S_A$ ($g \mapsto \sigma_g$). 
         Note: the kernel of the action $\cap_{a \in A} G_a = \ker \varphi$.
         \footnote{`Faithful' actions have kernels equal to $\{1_G\}$}
-    \item For $A \not= \phi$, the actions of $G$ on $A$ and the
-        homomorphisms $G \rightarrow S_A$ are bijective. Let $a \sim b$ iff $a
+    \item For $A \not= \phi$, each action $G \times A \rightarrow A$ is
+        isomorphic to a homomorphism $G \rightarrow S_A$. Let $a \sim b$ iff $a
         = gb$ for some $g \in G$: then $\sim$ partitions $G$, and the order
         of the equivalence class (i.e orbit) containing $a$ is $|G : G_a|$.
         \footnote{`Transitive' actions induce only one orbit in $A$.}
