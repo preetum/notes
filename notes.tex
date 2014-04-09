@@ -177,4 +177,50 @@ emphasis on non-obvious results.
 
 \section*{Chapter 7}
 
+\begin{enumerate}[1.]
+    \item Rings: $(R, +)$ is abelian, $\times$ is associative/distributive.
+        If $\times$ commutes, so does $R$. If $1 \in R$, $1r = r1$ $\forall
+        r$. If $1 \not= 0$ and every nonzero element has an inverse, $R$ is
+        a division ring. Commutative division rings are fields.
+    \item Let $a,b \in R$ be nonzero. Then $a0 = 0a = 0$. Zero divisors: 
+        $ab = 0$ or $ba = 0$. The set of units (i.e $uv = vu = 1$) is
+        $R^{\times}$.
+    \item Integral domains are commutative rings (with $1 \not= 0$)
+        with no zero divisors. Zero divisors cannot be units, therefore
+        fields have no zero divisors. 
+    \item Finite integral domains are fields. Subrings are $\leq R$ and
+        closed under $\times$.
+    \item $R[x]$: $(ab)x^k = \sum_{i=0}^k a_ib_{k-i} =
+        \sum_{i=0}^k a_{k-i}b_i$. Note: $R \subset R[x]$ (as the constant
+        polynomials) and $R[x]$ is commutative by definition.
+    \item If $R$ is an integral domain, $\deg(ab) = \deg(a) + \deg(b)$,
+        $R[x]^{\times} = R^{\times}$, and $R[x]$ is an integral domain.
+    \item Square matrices: $(a_{ij}) \in M_n(R)$. Invertible: $GL_n(R)$.
+    \item Fix a commutative ring $R$ with $1 \not= 0$ and let
+        $G$ be a finite group. Group rings $RG$ contain all formal sums
+        $\sum_i r_ig_i$ $r_i \in R$. Addition is done componentwise, and
+        $RG$ always has zero divisors.
+    \item Ring homomorphism: $\varphi : R \rightarrow S$ s.t $\varphi(a + b) =
+        \varphi(a) + \varphi(b)$ and $\varphi(ab) = \varphi(a)\varphi(b)$.
+        $\ker \varphi = \{r \in R \mid \varphi(r) = 0_S\}$, as if $\varphi$
+        were a group homomorphism.
+    \item $I = \ker \varphi$ is a subring of $R$ (and an ideal/normal subgroup
+        thereof), im($\varphi$) is a subring of $S$. 
+        If $\alpha \in \ker \varphi$, then $r\alpha$, $\alpha r \in R$
+        $\forall r \in R$.
+    \item Ideals: if $rI \subseteq I$, $Ir \subseteq I$, and $I$ subring of
+        $R$. $R/I$ is a quotient ring s.t $(r+I)+(s+I) = (r+s)+I$ and
+        $(r+I)\times(s+I) = rs + I$. $R/\ker \varphi \cong \varphi(R)$.
+        Note: every ideal is the kernel of a ring homomorphism and vice
+        versa.
+    \item Let $A$ be a subring and $B$ an ideal of $R$. Then $A + B$ is a
+        subring of $R$, $A \cap B$ is an ideal of $A$, and $(A+B)/B \cong
+        A/(A \cap B)$.
+    \item Let $I \subseteq J$ be ideals of $R$, then $(R/I)/(J/I) \cong
+        R/J$.
+    \item Ideal math: $I+J = \{i+j \mid i \in I, j \in J\}$, $IJ$ is the set
+        of all finite sums of elements of the form $ij$, and $I^n$ are all
+        $n$-length products within $I$.
+\end{enumerate}
+
 \end{document}
