@@ -1,0 +1,79 @@
+\documentclass[]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{fixltx2e} % provides \textsubscript
+
+% preetum
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{fullpage} % small margins
+\usepackage[small,compact]{titlesec} % compact section titles
+
+\usepackage{enumitem}
+\setitemize{itemsep=1pt,topsep=0pt,parsep=0pt,partopsep=0pt} % compact lists
+\setlist[description]{style=nextline} % desc on next line
+
+% compact main title. see
+% https://mirror.hmc.edu/ctan/macros/latex/contrib/titling/titling.pdf
+% for defaults
+\usepackage{titling}
+\setlength{\droptitle}{-7em}
+\posttitle{\par\end{center}\vspace{-2em}}
+\postauthor{\end{tabular}\par\end{center}\vspace{-2.5em}}
+\postdate{\par\end{center}}
+
+
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\newcommand{\normin}{\trianglelefteq}
+\newcommand{\x}{\times}
+\newcommand{\Z}{\mathbb{Z}}
+
+\title{Counterexamples in (Introductory) Algebra}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Isomorphism of quotients does not imply isomorphism of quotient groups \\
+ie: $H \cong K \not\implies G/H \cong G/K$]
+Let $G =\Z_4 \x \Z_2$, with $H = <(\bar 2, \bar 0)>$ and $K = (\bar 0, \bar 1)$. \\
+Then $H \cong K \cong Z_2$ but $G / K \cong Z_4 \not\cong Z_2 \x Z_2 \cong G / H$
+
+\item[Isomorphism of quotient groups does not imply isomorphism of quotients \\
+ie: $G/H \cong G/K \not\implies H \cong K$]
+(D\&F 3.3.8): For prime $p$, let $G$ be the group of $p$-power roots of unity.
+And $\phi: G \to G$ be the surjective homomorphism $z \mapsto z^p$. Then $G /
+\text{ker} \phi \cong G$. \\
+So let $K = \text{ker}\phi$ and $H$ be trivial. Then $G/K \cong G \cong G/H$,
+but $H \not\cong K$ (because $\text{ker} \phi$ is non-trivial).
+
+\item[A group can be isomorphic to a proper quotient of itself]
+Same example as above.
+
+\item[Direct product of Hamiltonian Groups\footnote{non-abelian group where
+every subgroup is normal} may not be Hamiltonian]
+In $Q_8 \x Q_8$, the subgroup $<(i, j)>$ is not normal because $<(i, j)> = \{(1,
+1), (i, j), (-1, -1), (-i, -j) \}$ but $(j, 1)(i, j)(j, 1)^{-1} = (-i, j)
+\not\in <(i, j)>$
+\end{description}
+
+\end{document}
