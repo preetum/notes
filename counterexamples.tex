@@ -69,11 +69,31 @@ but $H \not\cong K$ (because $\text{ker} \phi$ is non-trivial).
 \item[A group can be isomorphic to a proper quotient of itself]
 Same example as above.
 
+\item[An infinite group in which every element has finite order but for each positive
+integer $n$ there is an element of order $n$]
+$\prod_{n \in \mathbb{N}} Z_n$
+
+\item[A group such that every finite group is isomorphic to some subgroup]
+1) The direct product of all finite groups, or 2) The group of all bijections
+$\mathbb{N} \to \mathbb{N}$ (then applying Cayley's Theorem)
+
+\item[A nontrivial group $G$ s.t. $G \cong G \x G$]
+$G = Z_2 \x Z_2 \x \cdots$, with isomorphism $(g_1, g_2, g_3, \hdots) \mapsto
+((g_1, g_3, g_5, \hdots), (g_2, g_4, g_6, \hdots))$
+
+\item[A group of order $n$ may not have a subgroup of order $k$ for all $k | n$]
+The alternating group $A_4$ has order 12, but no element of order 6 (all elements are order 1, 2, or 4).
+
 \item[Direct product of Hamiltonian Groups\footnote{non-abelian group where
 every subgroup is normal} may not be Hamiltonian]
 In $Q_8 \x Q_8$, the subgroup $<(i, j)>$ is not normal because $<(i, j)> = \{(1,
 1), (i, j), (-1, -1), (-i, -j) \}$ but $(j, 1)(i, j)(j, 1)^{-1} = (-i, j)
 \not\in <(i, j)>$
+
+\item[Subgroups of finitely-generated groups may not be finitely generated]
+The commutator subgroup of the free group on two elements $F(\{x, y\})$ cannot
+be finitely generated (proof omitted).
+
 \end{description}
 
 \end{document}
