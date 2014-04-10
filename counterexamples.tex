@@ -53,12 +53,12 @@
 \maketitle
 
 \begin{description}
-\item[Isomorphism of quotients does not imply isomorphism of quotient groups \\
+\item[Isomorphism of factors does not imply isomorphism of quotient groups \\
 ie: $H \cong K \not\implies G/H \cong G/K$]
 Let $G =\Z_4 \x \Z_2$, with $H = <(\bar 2, \bar 0)>$ and $K = (\bar 0, \bar 1)$. \\
 Then $H \cong K \cong Z_2$ but $G / K \cong Z_4 \not\cong Z_2 \x Z_2 \cong G / H$
 
-\item[Isomorphism of quotient groups does not imply isomorphism of quotients \\
+\item[Isomorphism of quotient groups does not imply isomorphism of factors \\
 ie: $G/H \cong G/K \not\implies H \cong K$]
 (D\&F 3.3.8): For prime $p$, let $G$ be the group of $p$-power roots of unity.
 And $\phi: G \to G$ be the surjective homomorphism $z \mapsto z^p$. Then $G /
@@ -68,6 +68,11 @@ but $H \not\cong K$ (because $\text{ker} \phi$ is non-trivial).
 
 \item[A group can be isomorphic to a proper quotient of itself]
 Same example as above.
+
+\item[The image of an ideal may not be an ideal \\
+ie: $I$ ideal $\not\implies \phi(I)$ ideal for homomorphism $\phi$]
+Let $\phi: \Z \to \Z[x]$ by inclusion. Then $2\Z$ is ideal in $\Z$, but not in
+$\Z[x]$ ($2x \not\in 2\Z$).
 
 \item[An infinite group in which every element has finite order but for each positive
 integer $n$ there is an element of order $n$]
