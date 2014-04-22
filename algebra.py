@@ -117,20 +117,21 @@ def egcd(R, a, b):
     if r == R.zero:
         return (b, R.zero, R.one)
     d, j, k = egcd(R, b, r) # d = jb + kr
-    return (d, k, j-q)
+    return (d, k, j-k*q)
 
 ## EXAMPLES
 z1 = Polynomial(Z, [1, 2, 1])
 z2 = Polynomial(Z, [5, 2])
-print z1 * z2
+#print z1 * z2
 
 F = Fx(Q)
 f1 = Polynomial(Q, map(Fraction, [0, -1, 2]))   # 2x^2 - x = (2x+1)(x-1) + 1
-f2 = Polynomial(Q, map(Fraction, [-1, 1]))      # x-1
-print F.divide(f1, f2)
+p1 = Polynomial(Q, map(Fraction, [-1, 1]))      # x-1
+p2 = Polynomial(Q, map(Fraction, [-5, 2]))      # 2x-5
+#print F.divide(f1, p1)
 
-f3 = Polynomial(Q, map(Fraction, [2, -3, 1]))     #  (x-1)(x-2) = x^2 - 3x + 2
-f4 = Polynomial(Q, map(Fraction, [12, -10, 2]))   # 2(x-3)(x-2) = 2x^2 - 10x + 12
-d, x, y = egcd(F, f3, f4)
-print "gcd (%s, %s) = %s" % (f3, f4, d)
-assert d == f3*x + f4*y
+fA = p1*p2*p2
+fB = p1*p1*p1
+d, x, y = egcd(F, fA, fB)
+print "gcd (%s, %s) = %s" % (fA, fB, d)
+assert d == fA*x + fB*y
