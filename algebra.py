@@ -69,7 +69,7 @@ class Polynomial:
         return not self.coeffs == other.coeffs
     def __str__(self):
         return " + ".join([ "%sx^%d" % (str(c), n) for n, c in
-            enumerate(self.coeffs) if c != self.R.zero])
+            enumerate(self.coeffs)])
     def __repr__(self):
         return self.__str__()
 
@@ -97,7 +97,7 @@ class Fx:
         returns (q, r) s.t. a = qb + r with deg r < deg b
         """
         dd = a.degree() - b.degree()
-        if dd < 0:
+        if dd < 0 or a == self.zero:
             return self.zero, a
         q1 = ConstPoly(self.F, (a.coeffs[-1] / b.coeffs[-1])) \
                 * MonicPoly(self.F, dd)
@@ -111,7 +111,7 @@ class Fx:
 def egcd(R, a, b):
     """
     extended-gcd of (a, b) over Euclidian Domain R
-    returns (d, x, y) s.y. d = xa + yb
+    returns (d, x, y) s.t. d = xa + yb
     """
     q, r = R.divide(a, b)  # a = qb + r
     if r == R.zero:
@@ -119,19 +119,39 @@ def egcd(R, a, b):
     d, j, k = egcd(R, b, r) # d = jb + kr
     return (d, k, j-k*q)
 
+
+
 ## EXAMPLES
-z1 = Polynomial(Z, [1, 2, 1])
-z2 = Polynomial(Z, [5, 2])
-#print z1 * z2
 
 F = Fx(Q)
+
+"""
+z1 = Polynomial(Z, [1, 2, 1])
+z2 = Polynomial(Z, [5, 2])
+print z1 * z2
+
 f1 = Polynomial(Q, map(Fraction, [0, -1, 2]))   # 2x^2 - x = (2x+1)(x-1) + 1
 p1 = Polynomial(Q, map(Fraction, [-1, 1]))      # x-1
 p2 = Polynomial(Q, map(Fraction, [-5, 2]))      # 2x-5
-#print F.divide(f1, p1)
+print F.divide(f1, p1)
 
 fA = p1*p2*p2
 fB = p1*p1*p1
 d, x, y = egcd(F, fA, fB)
 print "gcd (%s, %s) = %s" % (fA, fB, d)
 assert d == fA*x + fB*y
+"""
+
+#D&F 9.2.9
+a = Polynomial(Q, map(Fraction, [1, 1, 1, 2, 0, 1]))
+b = Polynomial(Q, map(Fraction, [1, 2, 2, 2, 1, 1]))
+d, x, y = egcd(F, a, b)
+assert d == a*x + b*y
+print "gcd (a = %s, b = %s) = %s = (%s)*a + (%s)*b" % (a, b, d, x, y)
+
+#D&F 13.1.2
+a = Polynomial(Q, map(Fraction, [1, 1, 1]))
+b = Polynomial(Q, map(Fraction, [-2, -2, 0, 1]))
+d, x, y = egcd(F, a, b)
+assert d == a*x + b*y
+print "gcd (a = %s, b = %s) = %s = (%s)*a + (%s)*b" % (a, b, d, x, y)
