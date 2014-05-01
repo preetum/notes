@@ -1,0 +1,115 @@
+\documentclass[]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{fixltx2e} % provides \textsubscript
+
+% preetum
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{fullpage} % small margins
+\usepackage[small,compact]{titlesec} % compact section titles
+
+\usepackage{enumitem}
+\setitemize{itemsep=1pt,topsep=0pt,parsep=0pt,partopsep=0pt} % compact lists
+\setlist[description]{style=nextline} % desc on next line
+
+% compact main title. see
+% https://mirror.hmc.edu/ctan/macros/latex/contrib/titling/titling.pdf
+% for defaults
+\usepackage{titling}
+\setlength{\droptitle}{-7em}
+\posttitle{\par\end{center}\vspace{-2em}}
+\postauthor{\end{tabular}\par\end{center}\vspace{-2.5em}}
+\postdate{\par\end{center}}
+
+
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\newcommand{\normin}{\trianglelefteq}
+\newcommand{\x}{\times}
+\newcommand{\Z}{\mathbb{Z}}
+
+\title{Counterexamples in (Introductory) Algebra}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Isomorphism of factors does not imply isomorphism of quotient groups \\
+ie: $H \cong K \not\implies G/H \cong G/K$]
+Let $G =\Z_4 \x \Z_2$, with $H = <(\bar 2, \bar 0)>$ and $K = (\bar 0, \bar 1)$. \\
+Then $H \cong K \cong Z_2$ but $G / K \cong Z_4 \not\cong Z_2 \x Z_2 \cong G / H$
+
+\item[Isomorphism of quotient groups does not imply isomorphism of factors \\
+ie: $G/H \cong G/K \not\implies H \cong K$]
+(D\&F 3.3.8): For prime $p$, let $G$ be the group of $p$-power roots of unity.
+And $\phi: G \to G$ be the surjective homomorphism $z \mapsto z^p$. Then $G /
+\text{ker} \phi \cong G$. \\
+So let $K = \text{ker}\phi$ and $H$ be trivial. Then $G/K \cong G \cong G/H$,
+but $H \not\cong K$ (because $\text{ker} \phi$ is non-trivial).
+
+\item[A group can be isomorphic to a proper quotient of itself]
+Same example as above.
+
+\item[The image of an ideal may not be an ideal \\
+ie: $I$ ideal $\not\implies \phi(I)$ ideal for homomorphism $\phi$]
+Let $\phi: \Z \to \Z[x]$ by inclusion. Then $2\Z$ is ideal in $\Z$, but not in
+$\Z[x]$ ($2x \not\in 2\Z$).
+
+\item[An infinite group in which every element has finite order but for each positive
+integer $n$ there is an element of order $n$]
+$\prod_{n \in \mathbb{N}} Z_n$
+
+\item[A group such that every finite group is isomorphic to some subgroup]
+1) The direct product of all finite groups, or 2) The group of all bijections
+$\mathbb{N} \to \mathbb{N}$ (then applying Cayley's Theorem)
+
+\item[A nontrivial group $G$ s.t. $G \cong G \x G$]
+$G = Z_2 \x Z_2 \x \cdots$, with isomorphism $(g_1, g_2, g_3, \hdots) \mapsto
+((g_1, g_3, g_5, \hdots), (g_2, g_4, g_6, \hdots))$
+
+\item[A group of order $n$ may not have a subgroup of order $k$ for all $k | n$]
+The alternating group $A_4$ has order 12, but no element of order 6 (all
+elements have order 1, 2, or 3).
+
+\item[Direct product of Hamiltonian Groups\footnote{non-abelian group where
+every subgroup is normal} may not be Hamiltonian]
+In $Q_8 \x Q_8$, the subgroup $<(i, j)>$ is not normal because $<(i, j)> = \{(1,
+1), (i, j), (-1, -1), (-i, -j) \}$ but $(j, 1)(i, j)(j, 1)^{-1} = (-i, j)
+\not\in <(i, j)>$
+
+\item[Subgroups of finitely-generated groups may not be finitely generated]
+The commutator subgroup of the free group on two elements $F(\{x, y\})$ cannot
+be finitely generated (proof omitted).
+
+\end{description}
+
+\newpage
+\section*{Elementary Examples}
+\begin{description}
+\item[A non-trivial ring homomorphism with $\phi(1) \neq 1$]
+$\phi: \Z/6\Z \to \Z/6\Z$ given by $n \mapsto \overline{3n}$
+
+\item[Ideals $I, J$ where $IJ \subsetneq I \cap J$]
+Let $I = 2\Z$, $J = 4\Z$. Then $IJ = 8\Z$ but $I \cap J = J = 4\Z$.
+\end{description}
+
+\end{document}
