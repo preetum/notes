@@ -1,5 +1,5 @@
-% Ring Taxonomy
-% Preetum Nakkiran
+% Ring Taxonomy \vspace{-3em}
+% 
 % 
 
 $$\text{Fields} \subset \text{Euclidean domains} \subset \text{PIDs}
@@ -28,7 +28,7 @@ Eg, examples of UFDs are not also PIDs*
 #PID
 
 * irreducible $\implies$ prime (also from inclusion in UFD)
-* Every nonzero prime ideal is maximal.
+* nonzero prime ideal $\implies$ maximal
 * $R$ commutative, $R[x]$ PID $\iff$ $R$ is field. (since $(x)$ is prime $\implies$ maximal)
 * Ex: (nontrivial... most are Euclidean)
 
